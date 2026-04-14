@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-orange: #F4821F;
+  --color-brand-orange-light: #FFF0E0;
+  --color-brand-purple: #7B3FA0;
+  --color-brand-purple-light: #F0E8F8;
+  --color-brand-cyan: #00C4DC;
+  --color-brand-cyan-light: #E0F9FD;
+  --color-brand-dark: #1A1A2E;
+
+  /* Typography */
+  --font-family-display: 'Nunito', sans-serif;
+  --font-family-body: 'Nunito', sans-serif;
+
+  /* Border radius */
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+  }
+  body {
+    color: #1A1A2E;
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #F4821F;
+    color: white;
+    font-weight: 800;
+    font-size: 1.125rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 25px rgba(244, 130, 31, 0.35);
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    background-color: #e07318;
+    transform: scale(1.05);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #7B3FA0;
+    font-weight: 800;
+    font-size: 1.125rem;
+    border-radius: 9999px;
+    border: 2px solid #7B3FA0;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-ghost:hover {
+    background-color: #7B3FA0;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1A1A2E;
+    line-height: 1.1;
+  }
+
+  .wave-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    line-height: 0;
+  }
+}

@@ -1,0 +1,108 @@
+---
+const offerings = [
+  {
+    color: '#F4821F',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>`,
+    title: 'Talleres grupales',
+    description: 'Sesiones vivenciales donde los participantes desarrollan habilidades trabajando en equipo.',
+  },
+  {
+    color: '#7B3FA0',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+    title: 'Mentorías',
+    description: 'Voluntarios y profesionales acompañan el proceso de cada participante con guía personalizada.',
+  },
+  {
+    color: '#00C4DC',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    title: 'Comunidad',
+    description: 'Un entorno seguro con familias, escuelas y líderes comunitarios como red de apoyo.',
+  },
+  {
+    color: '#F4821F',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    title: 'Proyectos creativos',
+    description: 'Los participantes crean obras, historias, prototipos y presentaciones que reflejan su aprendizaje.',
+  },
+];
+---
+
+<section id="sobre" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span
+        class="inline-block text-sm font-bold px-4 py-1.5 rounded-full mb-4"
+        style="background-color: #F0E8F8; color: #7B3FA0;"
+      >
+        Sobre el Proyecto
+      </span>
+      <h2 class="section-title mb-6">
+        HabiLab — Club de Habilidades
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Un laboratorio vivo donde las emociones se exploran, las ideas se prueban
+        y las habilidades para la vida crecen.
+      </p>
+    </div>
+
+    <!-- Two-column content -->
+    <div class="grid md:grid-cols-2 gap-12 items-start mb-16">
+      <!-- Left: context card -->
+      <div>
+        <div
+          class="rounded-3xl p-8 mb-6"
+          style="background-color: #E0F9FD; border-left: 6px solid #00C4DC;"
+        >
+          <p class="text-lg font-bold leading-relaxed" style="color: #1A1A2E;">
+            "Muchos niños crecen en contextos donde el acceso a acompañamiento
+            emocional, espacios creativos y programas de desarrollo personal es limitado."
+          </p>
+        </div>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Las escuelas suelen carecer de servicios de tutoría psicológica o consejería,
+          y las comunidades enfrentan múltiples desafíos que afectan el bienestar y
+          desarrollo de los menores.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          A través de HabiLab se crean espacios seguros, dinámicos y participativos
+          donde los participantes pueden explorar sus emociones, fortalecer su autoestima,
+          aprender a relacionarse con los demás y desarrollar habilidades para la vida.
+        </p>
+      </div>
+
+      <!-- Right: offerings grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {offerings.map(item => (
+          <div
+            class="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-shadow duration-200"
+            style={`border-top: 4px solid ${item.color};`}
+          >
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+              style={`background-color: ${item.color}20; color: ${item.color};`}
+            >
+              <Fragment set:html={item.icon} />
+            </div>
+            <h3 class="font-extrabold text-[#1A1A2E] text-base mb-1">{item.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Values row -->
+    <div
+      class="rounded-3xl p-8"
+      style="background: linear-gradient(135deg, #7B3FA0, #F4821F);"
+    >
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-white text-center">
+        {['Creatividad', 'Empatía', 'Resiliencia', 'Inclusión', 'Colaboración', 'Innovación'].map(valor => (
+          <div>
+            <p class="font-extrabold text-sm">{valor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

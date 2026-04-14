@@ -1,0 +1,88 @@
+---
+const metrics = [
+  { color: '#F4821F', label: 'Autoestima', desc: 'Confianza en sí mismo' },
+  { color: '#7B3FA0', label: 'Liderazgo', desc: 'Guía y trabajo en equipo' },
+  { color: '#00C4DC', label: 'Empatía', desc: 'Relaciones saludables' },
+];
+---
+
+<section id="habilidades" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left: text content -->
+      <div>
+        <span
+          class="inline-block text-sm font-bold px-4 py-1.5 rounded-full mb-6"
+          style="background-color: #FFF0E0; color: #F4821F;"
+        >
+          ¿Por qué importa?
+        </span>
+
+        <h2 class="section-title mb-6">
+          El valor de desarrollar<br />
+          <span style="color: #7B3FA0;">habilidades para la vida</span>
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Las habilidades socioemocionales son fundamentales para el bienestar personal,
+          la convivencia y el desarrollo integral de niños y adolescentes.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mb-4">
+          HabiLab busca convertirse en un laboratorio de experiencias donde cada
+          participante pueda descubrir sus capacidades, aprender a expresar sus emociones,
+          desarrollar confianza en sí mismo y construir relaciones saludables con los demás.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mb-8">
+          A través del juego, la creatividad y el aprendizaje participativo, el proyecto
+          promueve valores como la empatía, la colaboración, la resiliencia y el respeto —
+          contribuyendo no solo al crecimiento individual sino también a comunidades
+          más saludables y solidarias.
+        </p>
+
+        <!-- Impact metrics -->
+        <div class="flex flex-wrap gap-4">
+          {metrics.map(m => (
+            <div
+              class="rounded-2xl px-6 py-4 text-white text-center min-w-28"
+              style={`background-color: ${m.color};`}
+            >
+              <p class="font-black text-lg leading-none mb-1">{m.label}</p>
+              <p class="text-xs opacity-80">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: image with overlay -->
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl">
+          <img
+            src="/images/foto-voluntarios-1.png"
+            alt="Actividades HabiLab con niños"
+            class="w-full h-96 object-cover"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
+          <!-- Overlay gradient -->
+          <div
+            class="absolute inset-0 rounded-3xl"
+            style="background: linear-gradient(to top, rgba(123,63,160,0.5) 0%, transparent 60%);"
+          ></div>
+        </div>
+
+        <!-- Quote card -->
+        <div
+          class="absolute -bottom-6 -right-4 bg-white rounded-2xl p-5 shadow-2xl max-w-64"
+        >
+          <p class="font-bold text-sm text-[#1A1A2E] leading-relaxed italic">
+            "HabiLab es un laboratorio donde las emociones, la creatividad y las
+            habilidades sociales se experimentan y se fortalecen."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
