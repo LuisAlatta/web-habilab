@@ -1,21 +1,19 @@
 ---
 const roles = [
   {
-    color: '#F4821F',
-    title: 'Participante',
-    description: 'Niños y adolescentes de 6 a 17 años que quieran explorar, aprender y crecer.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
-  },
-  {
     color: '#00C4DC',
     title: 'Voluntario',
     description: 'Universitarios y profesionales que quieran hacer mentoría y generar impacto social.',
+    href: '/voluntarios',
+    cta: 'Postularme como voluntario',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
   },
   {
     color: '#7B3FA0',
     title: 'Aliado',
     description: 'ONGs, escuelas y organizaciones que quieran apoyar o colaborar con el programa.',
+    href: '/aliados',
+    cta: 'Registrar alianza',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
   },
 ];
@@ -53,10 +51,10 @@ const roles = [
     </div>
 
     <!-- Roles cards -->
-    <div class="grid md:grid-cols-3 gap-6 mb-14">
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       {roles.map(role => (
         <div
-          class="rounded-3xl p-6 text-white text-center"
+          class="rounded-3xl p-8 text-white text-center flex flex-col"
           style={`background-color: ${role.color}20; border: 1px solid ${role.color}40;`}
         >
           <div
@@ -65,24 +63,17 @@ const roles = [
           >
             <Fragment set:html={role.icon} />
           </div>
-          <h3 class="font-extrabold text-xl mb-2 text-white">{role.title}</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.70);">{role.description}</p>
+          <h3 class="font-extrabold text-2xl mb-3 text-white">{role.title}</h3>
+          <p class="text-base leading-relaxed mb-6 flex-grow" style="color: rgba(255,255,255,0.75);">{role.description}</p>
+          <a
+            href={role.href}
+            class="inline-block px-8 py-3 font-bold rounded-full transition-all duration-200 hover:scale-105"
+            style={`background-color: ${role.color}; color: white;`}
+          >
+            {role.cta} →
+          </a>
         </div>
       ))}
-    </div>
-
-    <!-- Main CTA -->
-    <div class="text-center">
-      <a
-        href="#"
-        class="inline-block px-12 py-5 font-black text-xl rounded-full shadow-2xl transition-all duration-200 hover:scale-105 mb-4"
-        style="background: linear-gradient(135deg, #F4821F, #7B3FA0); color: white; box-shadow: 0 20px 40px rgba(244,130,31,0.3);"
-      >
-        Unirme al proyecto →
-      </a>
-      <p class="text-sm" style="color: rgba(255,255,255,0.50);">
-        Formularios de inscripción disponibles próximamente.
-      </p>
     </div>
   </div>
 </section>

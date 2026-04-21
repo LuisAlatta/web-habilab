@@ -1,15 +1,19 @@
 ---
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const base = isHome ? '' : '/';
 const navLinks = [
-  { label: 'Sobre el Proyecto', href: '#sobre' },
-  { label: '¿Cómo Funciona?', href: '#como-funciona' },
-  { label: 'Actividades', href: '#actividades' },
+  { label: 'Sobre el Proyecto', href: `${base}#sobre` },
+  { label: '¿Cómo Funciona?', href: `${base}#como-funciona` },
+  { label: 'Actividades', href: `${base}#actividades` },
 ];
+const homeHref = isHome ? '#inicio' : '/';
+const uneteHref = `${base}#unete`;
 ---
 
 <header class="sticky top-0 z-50 bg-white shadow-sm" id="site-header">
   <nav class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
     <!-- Logo -->
-    <a href="#inicio" aria-label="HabiLab inicio">
+    <a href={homeHref} aria-label="HabiLab inicio">
       <img
         src="/images/logo.png"
         alt="HabiLab"
@@ -32,7 +36,7 @@ const navLinks = [
         </li>
       ))}
       <li>
-        <a href="#unete" class="btn-primary !py-2.5 !px-6 !text-base">
+        <a href={uneteHref} class="btn-primary !py-2.5 !px-6 !text-base">
           Únete
         </a>
       </li>
@@ -62,7 +66,7 @@ const navLinks = [
         </li>
       ))}
       <li>
-        <a href="#unete" class="btn-primary inline-block text-center !py-3 !text-base w-full">
+        <a href={uneteHref} class="btn-primary inline-block text-center !py-3 !text-base w-full">
           Únete al proyecto
         </a>
       </li>
